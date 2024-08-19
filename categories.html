@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <style>
+          /* NAVBAR STARTS */
+         /* NAVBAR STARTS */
+:root {
+    --color-1: black;
+    --text-color: white;
+    --accent-color: rgb(41, 108, 233);
+}
+/* Heading Style for Non-Responsive (Larger Screens) */
+h2 {
+    color: white;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin: 20px; /* Adds space around the heading */
+    text-align: left; /* Aligns to the left on larger screens */
+}
+
+/* Center Heading for Responsive Modes */
+@media (max-width: 768px) {
+    h2 {
+        text-align: center; /* Center the heading on smaller screens */
+        margin: 20px auto; /* Center the heading within its container */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(98, 72, 243);
+}
+
+nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: #6248f3;
+}
+
+nav .home-link {
+    margin-left: auto;
+}
+
+nav svg {
+    color: white;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    padding: 0 20px;
+    display: none;
+}
+
+/* Existing Mobile Styles */
+@media (max-width: 450px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* iPad Mini Specific Styles */
+@media (max-width: 768px) and (min-width: 601px) {
+    .links-container {
+        justify-content: space-between;
+    }
+
+    nav a {
+        padding: 0 15px;
+    }
+}
+
+/* Surface Duo Specific Styles */
+@media (max-width: 540px) and (min-width: 451px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 250px; /* Slightly narrower for Surface Duo */
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 15px 25px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 15px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* NAVBAR ENDS */
+ 
+/* NAVBAR ENDS */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:  rgb(98, 72, 243);
+    color: #333;
+}
+
+/* Categories Section */
+.categories {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.categories h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.category img {
+    height:250px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.category h2 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.category p {
+    font-size: 1em;
+    color: #666;
+}
+
+.category a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #6248f3;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.category a:hover {
+    background-color: #4e3bb2;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 92px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
+ 
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .category {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .category {
+        width: 30%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Tech  Tips Hub</h2>
+       <input type="checkbox"  id="sidebar-active">
+       <label for="sidebar-active" class="open-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 448 512" width="32"> <path fill="#fafafa" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+    </label>
+     
+      <label id="overlay" for="sidebar-active"></label>
+
+
+    <div class="links-container">
+     <label for="sidebar-active" class="close-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg"  height="32" viewBox="0 0 384 512" width="32"> <path fill="#f2f2f3" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+
+     </label>
+     <a  class="home-link" href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a href="blog.html">Blog</a>
+     <a href="categories.html">Categories</a>
+     <a href="tutorials.html">Tutorials</a>
+     <a href="contact.html">Contact</a>
+
+    </div>
+    </nav>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h1>Explore by Categories</h1>
+        <div class="category-grid">
+            <div class="category">
+                <img src="1_zn3TocRJpMRZyGIQkDWzpw.png" alt="HTML Category">
+                <h2>HTML</h2>
+                <p>Learn the basics of HTML, the foundational language of the web.</p>
+                <a href="https://www.w3schools.com/html/">Explore HTML</a>
+            </div>
+            <div class="category">
+                <img src="dark-mode.png" alt="CSS Category">
+                <h2>CSS</h2>
+                <p>Discover the power of CSS to style and layout your web pages.</p>
+                <a href="https://www.w3schools.com/css/default.asp">Explore CSS</a>
+            </div>
+            <div class="category">
+                <img src="1_AwnthSYvn8KnfAX4X0LX0w.png" alt="JavaScript Category">
+                <h2>JavaScript</h2>
+                <p>Dive into JavaScript to make your web pages interactive.</p>
+                <a href="https://www.w3schools.com/js/default.asp">Explore JavaScript</a>
+            </div>
+            <!-- Add more categories as needed -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tech Tips and Tutorials. All rights reserved.</p>
+    </footer>
+</body>
+</html>

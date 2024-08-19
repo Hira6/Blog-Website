@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+         /* NAVBAR STARTS */
+         /* NAVBAR STARTS */
+:root {
+    --color-1: black;
+    --text-color: white;
+    --accent-color: rgb(41, 108, 233);
+}
+/* Heading Style for Non-Responsive (Larger Screens) */
+h2 {
+    color: white;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin: 20px; /* Adds space around the heading */
+    text-align: left; /* Aligns to the left on larger screens */
+}
+
+/* Center Heading for Responsive Modes */
+@media (max-width: 768px) {
+    h2 {
+        text-align: center; /* Center the heading on smaller screens */
+        margin: 20px auto; /* Center the heading within its container */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(98, 72, 243);
+}
+
+nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: #6248f3;
+}
+
+nav .home-link {
+    margin-left: auto;
+}
+
+nav svg {
+    color: white;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    padding: 0 20px;
+    display: none;
+}
+
+/* Existing Mobile Styles */
+@media (max-width: 450px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* iPad Mini Specific Styles */
+@media (max-width: 768px) and (min-width: 601px) {
+    .links-container {
+        justify-content: space-between;
+    }
+
+    nav a {
+        padding: 0 15px;
+    }
+}
+
+/* Surface Duo Specific Styles */
+@media (max-width: 540px) and (min-width: 451px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 250px; /* Slightly narrower for Surface Duo */
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 15px 25px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 15px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* NAVBAR ENDS */
+ 
+/* NAVBAR ENDS */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color:  rgb(98, 72, 243);
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6248f3;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* Search Bar */
+.search-bar {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+/* Featured Posts */
+.featured-articles {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+/* Center the title */
+.featured-articles h2 {
+    color: black;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Flexbox layout for centering articles */
+.featured-articles .articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Ensure articles are centered and responsive */
+.featured-articles .article {
+    margin: 20px;
+    width: 100%;
+    max-width: 300px; /* Adjust to control the max width of each article */
+    text-align: center; /* Center text inside each article */
+}
+
+/* Adjust widths for responsiveness */
+@media (min-width: 768px) {
+    .featured-articles .article {
+        width: 45%; /* Two articles per row on tablets */
+    }
+}
+
+@media (min-width: 1024px) {
+    .featured-articles .article {
+        width: 30%; /* Three articles per row on desktops */
+    }
+}
+
+.featured-articles .article img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.featured-articles .article h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.featured-articles .article p {
+    color: rgba(27, 26, 26, 0.856);
+}
+
+.featured-articles .article a {
+    text-decoration: none;
+    color:black;
+}
+
+.featured-articles .article a:hover {
+    color: rgb(62, 33, 228);
+}
+
+
+/* Blog Posts */
+.blog-posts {
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.blog-posts h2 {
+    text-align: center;
+    color: black;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Flexbox layout for centering blog posts */
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+}
+
+/* Ensure posts are centered and responsive */
+.post {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin: 20px;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    text-align: center; /* Center text inside each post */
+    box-sizing: border-box;
+}
+
+/* Ensure images are responsive and consistent */
+.post img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+/* Ensure consistent spacing and alignment of text and button */
+.post h3 {
+    margin-top: 15px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.post p {
+    margin-top: 10px;
+    font-size: 1em;
+    margin-bottom: 20px; /* Add margin to separate from button */
+}
+
+.post a {
+     
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6248f3;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: auto; /* Push the button to the bottom of the post */
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 768px) {
+    .post {
+        flex: 1 1 calc(50% - 40px); /* 2 items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .post {
+        flex: 1 1 100%; /* 1 item per row on very small screens */
+    }
+}
+
+
+
+/* Categories */
+.categories {
+    padding: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.categories h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.categories ul {
+    list-style: none;
+    padding: 0;
+}
+
+.categories ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.categories ul li a {
+    text-decoration: none;
+    color: #6248f3;
+    font-size: 1.2em;
+}
+
+/* Call to Action (CTA) */
+.cta {
+    padding: 20px;
+    background-color: #6248f3;
+    text-align: center;
+    color: #fff;
+}
+
+.cta h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #6248f3;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Social Share */
+.social-share {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.social-share p {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.social-share a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    color: #6248f3;
+}
+
+/* Footer */
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .featured-posts .post, .blog-posts .post {
+        max-width: 90%;
+    }
+
+    .search-bar input {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p, .cta p {
+        font-size: 1em;
+    }
+
+    .cta h3 {
+        font-size: 1.5em;
+    }
+
+    .categories ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Tech  Tips Hub</h2>
+       <input type="checkbox"  id="sidebar-active">
+       <label for="sidebar-active" class="open-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 448 512" width="32"> <path fill="#fafafa" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+    </label>
+     
+      <label id="overlay" for="sidebar-active"></label>
+
+
+    <div class="links-container">
+     <label for="sidebar-active" class="close-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg"  height="32" viewBox="0 0 384 512" width="32"> <path fill="#f2f2f3" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+
+     </label>
+     <a  class="home-link" href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a href="blog.html">Blog</a>
+     <a href="categories.html">Categories</a>
+     <a href="tutorials.html">Tutorials</a>
+     <a href="contact.html">Contact</a>
+
+    </div>
+    </nav>
+    <!-- Header Section -->
+    <header>
+        <h1>Tech Tips and Tutorials</h1>
+        <p>Stay updated with the latest trends, tutorials, and tips in web development.</p>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search articles...">
+    </div>
+
+    <!-- Featured Posts Section -->
+     <!-- Featured Posts Section -->
+<section class="featured-articles">
+    <h2>Featured Articles</h2>
+    <div class="articles-container">
+        <div class="article">
+            <img src="pngtree-a-conceptual-illustration-of-web-design-development-and-seo-optimization-in-image_13584944.png" alt="Featured Article 1">
+            <h3><a href="https://www.webfx.com/blog/web-design/modern-web-design/">Understanding Modern Web Design Trends</a></h3>
+            <p>A deep dive into the latest trends shaping the world of web design...</p>
+        </div>
+        <div class="article">
+            <img src="featured_1-1024x576.jpg" alt="Featured Article 2">
+            <h3><a href="https://blog.devgenius.io/mastering-javascript-smart-tips-and-techniques-for-developers-426a3cad27b7">Mastering JavaScript: Tips and Tricks</a></h3>
+            <p>Advanced techniques and best practices for mastering JavaScript...</p>
+        </div>
+        <div class="article">
+            <img src="https___dev-to-uploads.s3.amazonaws.com_uploads_articles_whh1lpihw7h587pb2iuc.avif" alt="Featured Article 3">
+            <h3><a href="https://dev.to/codewithshahan/the-future-of-frontend-development-1amd">The Future of Front-End Development</a></h3>
+            <p>Exploring upcoming trends and technologies in front-end development...</p>
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- Blog Post Previews -->
+     <!-- Blog Post Previews -->
+<section class="blog-posts">
+    <h2> Blog Posts</h2>
+    <div class="posts-container">
+        <div class="post">
+            <img src="hero.jpg" alt="HTML Basics Image">
+            <h3>Getting Started with HTML: The Building Blocks of the Web</h3>
+            <p>HTML is the foundation of all web pages. Learn the basics of HTML...<span id="moreContent2" style="display:none;"> Discover how HTML structures web content, how to use tags, and build a simple webpage.</span></p>
+            <a href="https://www.w3schools.com/html/html_basic.asp" id="readMoreBtn2"><b>Read More</b></a>
+        </div>
+        <div class="post">
+            <img src="SWD_Blog_Banner_-_Repository_Pattern_Implementation.png" alt="Post Image">
+            <h3>Understanding Flexbox: <br>A Beginner's Guide in details</h3>
+            <p>Flexbox is a powerful layout tool in CSS. This guide covers the basics...<span id="moreContent1" style="display:none;"> Here’s the detailed explanation of Flexbox, including examples and best practices.</span></p>
+            <a href="https://www.w3schools.com/css/css3_flexbox.asp" id="readMoreBtn1"><b>Read More</b></a>
+        </div>
+        
+        <div class="post">
+            <img src="download.jpeg" alt="JavaScript Essentials Image">
+            <h3>JavaScript Essentials: Bringing Your Web Pages to Life</h3>
+            <p>JavaScript adds interactivity to your website. Get started with JavaScript...<span id="moreContent3" style="display:none;"> Learn the basics of JavaScript, including variables, functions, and events.</span></p>
+            <a href="https://www.udemy.com/course/javascript-essentials/" id="readMoreBtn3"><b>Read More</b></a>
+        </div>
+         
+    </div>
+</section>
+
+
+    <!-- Categories/Tags Section -->
+    <aside class="categories">
+        <h3>Categories</h3>
+        <ul>
+            <li><a href="categories.html#html-category"><b>HTML</b></a></li>
+            <li><a href="  categories.html#css-category"><b>CSS</b></a></li>
+            <li><a href="  categories.html#javascript-category"><b>JavaScript</b></a></li>
+            
+        </ul>
+    </aside>
+
+    <!-- Call to Action (CTA) -->
+    <section class="cta">
+        <h3>Never Miss an Update!</h3>
+        <p>Subscribe to our newsletter for the latest tips and tutorials.</p>
+        <a href="#" id="subscribeBtn" class="cta-button"><b>Subscribe Now</b></a>
+    </section>
+
+    <!-- Social Share Buttons -->
+    <section class="social-share">
+        <p><b>Share this post:</b></p>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/hira-ghulam-nabi-b5151b306" target="_blank" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Hira6" target="_blank" aria-label="Github Profile">
+                <i class="fa-brands fa-github"></i>
+            </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tech Tips and Tutorials. All Rights Reserved.</p>
+    </footer>
+     
+
+    <script>
+        document.getElementById('subscribeBtn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default action of the link
+            // Perform your action here
+            alert("Thank you for subscribing!");
+             
+        });
+
+    
+    </script>
+    
+
+    
+</body>
+</html>

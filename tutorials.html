@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials</title>
+    <style>
+          /* NAVBAR STARTS */
+         /* NAVBAR STARTS */
+:root {
+    --color-1: black;
+    --text-color: white;
+    --accent-color: rgb(41, 108, 233);
+}
+/* Heading Style for Non-Responsive (Larger Screens) */
+h2 {
+    color: white;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin: 20px; /* Adds space around the heading */
+    text-align: left; /* Aligns to the left on larger screens */
+}
+
+/* Center Heading for Responsive Modes */
+@media (max-width: 768px) {
+    h2 {
+        text-align: center; /* Center the heading on smaller screens */
+        margin: 20px auto; /* Center the heading within its container */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(98, 72, 243);
+}
+
+nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: #6248f3;
+}
+
+nav .home-link {
+    margin-left: auto;
+}
+
+nav svg {
+    color: white;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    padding: 0 20px;
+    display: none;
+}
+
+/* Existing Mobile Styles */
+@media (max-width: 450px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* iPad Mini Specific Styles */
+@media (max-width: 768px) and (min-width: 601px) {
+    .links-container {
+        justify-content: space-between;
+    }
+
+    nav a {
+        padding: 0 15px;
+    }
+}
+
+/* Surface Duo Specific Styles */
+@media (max-width: 540px) and (min-width: 451px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 250px; /* Slightly narrower for Surface Duo */
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 15px 25px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 15px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* NAVBAR ENDS */
+ 
+/* NAVBAR ENDS */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.tutorials {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.tutorials h1{
+    color: #333;
+    margin-bottom: 20px;
+}
+.tutorials h2 {
+    color: #6248f3;
+    text-align: center;
+}
+/* Flexbox layout for centering tutorials */
+.tutorials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+    padding-bottom: 15px;
+}
+
+/* Wrapper around video to handle padding */
+.tutorials-container .video-wrapper {
+    padding: 15px; /* Adjust the padding value as needed */
+    background-color: #bbb6b6a3; /* Optional: Add a background color to the padding area */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+.tutorials-container .video-wrapper iframe {
+    width: 100%; /* Ensure the iframe takes the full width of the wrapper */
+    height: auto; /* Maintain aspect ratio */
+    border: none;  /* Remove border from the iframe */
+}
+
+.tutorial {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    padding: 15px;
+}
+
+.tutorial h2 {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+.tutorial p {
+    margin: 10px 0;
+}
+
+.tutorial a {
+    color: #6248f3;
+    text-decoration: none;
+}
+
+.tutorial a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Tech  Tips Hub</h2>
+       <input type="checkbox"  id="sidebar-active">
+       <label for="sidebar-active" class="open-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 448 512" width="32"> <path fill="#fafafa" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+    </label>
+     
+      <label id="overlay" for="sidebar-active"></label>
+
+
+    <div class="links-container">
+     <label for="sidebar-active" class="close-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg"  height="32" viewBox="0 0 384 512" width="32"> <path fill="#f2f2f3" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+
+     </label>
+     <a  class="home-link" href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a href="blog.html">Blog</a>
+     <a href="categories.html">Categories</a>
+     <a href="tutorials.html">Tutorials</a>
+     <a href="contact.html">Contact</a>
+
+    </div>
+    </nav>
+    <main>
+        <section class="tutorials">
+            <h1>Our Tutorials</h1>
+            <h2>Apna College</h2>
+            <div class="tutorials-container">
+                <article class="tutorial">
+                <div class="video-wrapper"><iframe width="295" height="180" src="https://www.youtube.com/embed/HcOc7P5BMi4?si=1fyva4y8STjST0M6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                    <h2><a href="https://www.youtube.com/watch?v=HcOc7P5BMi4&t=816s">HTML Tutorial</a></h2>
+                    <p>Learn the basics of HTML and how to create your first web page. This tutorial covers essential HTML elements and structure.</p>
+                </article>
+                <article class="tutorial">
+                    <div class="video-wrapper"><iframe width="295" height="180" src="https://www.youtube.com/embed/ESnrn1kAD4E?si=fhaBKytkzzREnrl0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h2><a href="">CSS Tutorial</a></h2>
+                    <p>Understand the core concepts of CSS, including selectors, properties, and how to style your web pages effectively.</p>
+                </article>
+                <article class="tutorial">
+                    <div class="video-wrapper">
+                    <iframe width="295" height="180" src="https://www.youtube.com/embed/videoseries?si=couDpYkTuzx3BVUq&amp;list=PLGjplNEQ1it_oTvuLRNqXfz_v_0pq6unW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                    <h2><a href="https://www.youtube.com/playlist?list=PLGjplNEQ1it_oTvuLRNqXfz_v_0pq6unW">JavaScript Tutorial</a></h2>
+                    <p>Get started with JavaScript programming, including variables, functions, and basic scripting for web development.</p>
+                </article>
+                 
+            </div>
+            <h2>Code with harry</h2>
+            <div class="tutorials-container">
+                
+                <article class="tutorial">
+                    <div class="video-wrapper">
+                    <iframe width="295" height="180" src="https://www.youtube.com/embed/BsDoLVMnmZs?si=A62e38mYf5yCXe-1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <h2><a href="https://www.youtube.com/watch?v=BsDoLVMnmZs">HTML Tutorial</a></h2>
+                    <p>Learn the basics of HTML and how to create your first web page. This tutorial covers essential HTML elements and structure.</p>
+                </article>
+                <article class="tutorial">
+                    <div class="video-wrapper">
+                    <iframe width="295" height="180" src="https://www.youtube.com/embed/Edsxf_NBFrw?si=BIl2ag9_CwlHyA2f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                    <h2><a href="https://www.youtube.com/watch?v=Edsxf_NBFrw">CSS Tutorial</a></h2>
+                    <p>Understand the core concepts of CSS, including selectors, properties, and how to style your web pages effectively.</p>
+                </article>
+                <article class="tutorial">
+                    <div class="video-wrapper">
+                    <iframe width="295" height="180" src="https://www.youtube.com/embed/videoseries?si=eVGa6So7oPpO3jL0&amp;list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                    <h2><a href="https://www.youtube.com/playlist?list=PLu0W_9lII9ahR1blWXxgSlL4y9iQBnLpR">JavaScript Tutorial</a></h2>
+                    <p>Get started with JavaScript programming, including variables, functions, and basic scripting for web development.</p>
+                </article>
+                 
+            </div>
+            <h2>Tech Minds</h2>
+            <div class="tutorials-container">
+                
+                <article class="tutorial">
+                    <div class="video-wrapper">
+                    <iframe width="295" height="180" src="https://www.youtube.com/embed/V4yNXP0g3WA?si=QsFNGgdRstpqERL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                    <h2><a href="https://www.youtube.com/watch?v=V4yNXP0g3WA">HTML Crash Course</a></h2>
+                    <p>Learn the basics of HTML and how to create your first web page. This tutorial covers essential HTML elements and structure.</p>
+                </article>
+                <article class="tutorial">
+                    <div class="video-wrapper">
+                    <iframe width="295" height="180" src="https://www.youtube.com/embed/B8CQ5JKrkIo?si=fMAJtjQvRY5mDEtT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                    <h2><a href="https://www.youtube.com/watch?v=B8CQ5JKrkIo">CSS Crash Course</a></h2>
+                    <p>Understand the core concepts of CSS, including selectors, properties, and how to style your web pages effectively.</p>
+                </article>
+                <article class="tutorial">
+                    <div class="video-wrapper">
+                    <iframe width="295" height="180" src="https://www.youtube.com/embed/wQGSgJFNcd4?si=zJpDjZCsVCCRyzBJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                    <h2><a href="https://www.youtube.com/watch?v=wQGSgJFNcd4">Mastering Linkedin</a></h2>
+                    <p>Get started with JavaScript programming, including variables, functions, and basic scripting for web development.</p>
+                </article>
+                 
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tech Tips and Tutorials. All rights reserved.</p>
+    </footer>
+</body>
+</html>

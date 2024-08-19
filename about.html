@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+         /* NAVBAR STARTS */
+:root {
+    --color-1: black;
+    --text-color: white;
+    --accent-color: rgb(41, 108, 233);
+}
+/* Heading Style for Non-Responsive (Larger Screens) */
+h2 {
+    color: white;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin: 20px; /* Adds space around the heading */
+    text-align: left; /* Aligns to the left on larger screens */
+}
+
+/* Center Heading for Responsive Modes */
+@media (max-width: 768px) {
+    h2 {
+        text-align: center; /* Center the heading on smaller screens */
+        margin: 20px auto; /* Center the heading within its container */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(98, 72, 243);
+}
+
+nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: #6248f3;
+}
+
+nav .home-link {
+    margin-left: auto;
+}
+
+nav svg {
+    color: white;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    padding: 0 20px;
+    display: none;
+}
+
+/* Existing Mobile Styles */
+@media (max-width: 450px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* iPad Mini Specific Styles */
+@media (max-width: 768px) and (min-width: 601px) {
+    .links-container {
+        justify-content: space-between;
+    }
+
+    nav a {
+        padding: 0 15px;
+    }
+}
+
+/* Surface Duo Specific Styles */
+@media (max-width: 540px) and (min-width: 451px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 250px; /* Slightly narrower for Surface Duo */
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 15px 25px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 15px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* NAVBAR ENDS */
+ 
+/* NAVBAR ENDS */
+
+
+  /* about page starts*/
+   /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+header.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+header.hero p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+section.timeline {
+    padding: 40px 0;
+    background: #f9f9f9;
+}
+
+section.timeline h2 {
+    color:#6248f3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-date {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+section.testimonials {
+    padding: 40px 0;
+    background: #fff;
+}
+
+section.testimonials h2 {
+    color: #6248f3;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testimonial-item {
+    margin-bottom: 20px;
+}
+
+.testimonial-item blockquote {
+    border-left: 4px solid #6248f3;
+    padding-left: 20px;
+    font-style: italic;
+}
+
+.testimonial-item footer {
+    color: #333;
+    background-color: #f1f1f1;
+    text-align: right;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+section.call-to-action {
+    padding: 40px 0;
+    background: #6248f3;
+    color: #fff;
+    text-align: center;
+}
+
+section.call-to-action h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+section.call-to-action p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background: #fff;
+    color: #6248f3;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background: #e0e0e0;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background:  #333;
+}
+ 
+       
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Tech  Tips Hub</h2>
+       <input type="checkbox"  id="sidebar-active">
+       <label for="sidebar-active" class="open-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 448 512" width="32"> <path fill="#fafafa" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+    </label>
+     
+      <label id="overlay" for="sidebar-active"></label>
+
+
+    <div class="links-container">
+     <label for="sidebar-active" class="close-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg"  height="32" viewBox="0 0 384 512" width="32"> <path fill="#f2f2f3" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+
+     </label>
+     <a  class="home-link" href="index.html">Home</a>
+     <a href="about.html">About</a>
+     <a href="blog.html">Blog</a>
+     <a href="categories.html">Categories</a>
+     <a href="tutorials.html">Tutorials</a>
+     <a href="contact.html">Contact</a>
+
+    </div>
+    </nav>
+
+    <!-- about page html -->
+    <header class="hero">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Learn more about our journey, mission, and the team behind the scenes.</p>
+        </div>
+    </header>
+
+    <section class="timeline">
+        <div class="container">
+            <h2>Our Journey</h2>
+            <div class="timeline-item">
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>New Beginnings</h3>
+                    <p>We started our journey with a mission to innovate and create value for our clients.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-content">
+                    <h3>Growth and Expansion</h3>
+                    <p>Our team expanded and we began offering new services to meet the needs of our clients.</p>
+                </div>
+            </div>
+            <!-- Add more timeline items as needed -->
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-item">
+                <blockquote>
+                    <p>"The team delivered exceptional results and exceeded our expectations. Highly recommend!"</p>
+                    <footer>- Alex Smith, CEO of Tech Innovators</footer>
+                </blockquote>
+            </div>
+            <div class="testimonial-item">
+                <blockquote>
+                    <p>"Professional and dedicated, they made our project a success. Would definitely work with them again."</p>
+                    <footer>- Jamie Lee, Director at Creative Solutions</footer>
+                </blockquote>
+            </div>
+            <!-- Add more testimonials as needed -->
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <div class="container">
+            <h2>Ready to Work With Us?</h2>
+            <p>Get in touch to discuss how we can help you achieve your goals.</p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+ 

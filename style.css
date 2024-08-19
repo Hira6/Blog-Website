@@ -1,0 +1,343 @@
+:root{
+    --color-1:black;
+    --text-color:white;
+    --accent-color:rgb(41, 108, 233);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(98, 72, 243);
+}
+
+html{
+    
+   font-size: 12pt;
+   font-family:Arial, Helvetica, sans-serif;
+}
+.main-heading {
+    text-align: center;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color:black;
+    background-color: #fff;
+}
+
+/* CSS to keep the heading on one row */
+h2{
+    color:  #6248f3;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin: 20px; /* Adds space around the heading */
+}
+  
+ @media (max-width: 768px) {
+    h2{
+        font-size: 2em; /* Smaller font size for smaller screens */
+    }
+}
+@media (min-width: 344px) and (max-width: 540px) and (orientation: landscape) {
+    h2{
+        font-size: 2.2em; /* Slightly larger to fit on one row */
+    }
+}
+
+/* NAVBAR STARTS */
+:root {
+    --color-1: black;
+    --text-color: white;
+    --accent-color: rgb(41, 108, 233);
+}
+/* Heading Style for Non-Responsive (Larger Screens) */
+h2 {
+    color: white;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    margin: 20px; /* Adds space around the heading */
+    text-align: left; /* Aligns to the left on larger screens */
+}
+
+/* Center Heading for Responsive Modes */
+@media (max-width: 768px) {
+    h2 {
+        text-align: center; /* Center the heading on smaller screens */
+        margin: 20px auto; /* Center the heading within its container */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: rgb(98, 72, 243);
+}
+
+nav {
+    height: 60px;
+    background-color: var(--color-1);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.links-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: #6248f3;
+}
+
+nav .home-link {
+    margin-left: auto;
+}
+
+nav svg {
+    color: white;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    padding: 0 20px;
+    display: none;
+}
+
+/* Existing Mobile Styles */
+@media (max-width: 450px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 20px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* iPad Mini Specific Styles */
+@media (max-width: 768px) and (min-width: 601px) {
+    .links-container {
+        justify-content: space-between;
+    }
+
+    nav a {
+        padding: 0 15px;
+    }
+}
+
+/* Surface Duo Specific Styles */
+@media (max-width: 540px) and (min-width: 451px) {
+    .links-container {
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 250px; /* Slightly narrower for Surface Duo */
+        background-color: var(--color-1);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+        transition: 0.75s ease-out;
+    }
+
+    nav a {
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 15px 25px;
+        justify-content: flex-start;
+    }
+
+    .open-sidebar-button, .close-sidebar-button {
+        padding: 15px;
+        display: block;
+    }
+
+    #sidebar-active:checked ~ .links-container {
+        right: 0;
+    }
+
+    #sidebar-active:checked ~ #overlay {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* NAVBAR ENDS */
+ 
+/* homepage  */
+.homepage-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color:  rgb(98, 72, 243);
+}
+
+.section-heading {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: white;
+}
+.homepage-posts .post {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 15px;
+    width: calc(33.333% - 30px); /* Three posts per row */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.homepage-posts .post img {
+    width: 100%;
+    border-radius: 8px;
+}
+ 
+.homepage-posts .post h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+.homepage-posts .post p {
+    font-size: 1em;
+    color: #666;
+}
+
+.homepage-posts .post a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #6248f3;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.homepage-posts .post a:hover {
+    background-color: #5038cc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .homepage-posts .post {
+        width: 45%; /* Two posts per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage-posts .post {
+        width: 100%; /* One post per row on mobile devices */
+    }
+}
+
+
+
+
+/* footer starts */
+a {
+    text-decoration: none;
+}
+
+#footer {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 30px;
+}
+
+footer li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+.footer-icons a {
+    background-color: rgb(98, 72, 243);
+    padding: 15px;
+    border-radius: 100px;
+    display: flex;
+    font-size: 25px;
+    color: #0f0f0f; /* Default color for icons */
+    transition: color 0.3s ease, 
+    background-color 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: azure;
+    /* background-color: darkblue; Optional: Change background on hover */
+}
+
+.footer-menu a:hover {
+    color:rgb(51, 17, 243);
+}
+
+.footer-copyright {
+    background-color: #333;
+    color:white;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.footer-copyright p {
+    margin-bottom: 0px;
+}
+

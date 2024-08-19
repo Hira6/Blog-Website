@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECH TIPS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ </head>
+<body>
+    <nav>
+        <h2>Tech Tips Hub</h2>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 448 512" width="32">
+                <path fill="#fafafa" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+            </svg>
+        </label>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 384 512" width="32">
+                    <path fill="#f2f2f3" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+            </label>
+            <a class="home-link" href="#">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="categories.html">Categories</a>
+            <a href="tutorials.html">Tutorials</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    
+    <h1 class="main-heading">Welcome to Tech Tips Hub</h1>
+
+    <!-- Latest Blog Posts on Homepage -->
+     <!-- Blog Post Previews on Homepage -->
+     <section class="homepage-posts">
+        <h2 class="section-heading">Latest Blog Posts</h2>
+        <div class="post">
+            <img src="programming-code-coding-or-hacker-background-vector.jpg" alt="Post 1 Image">
+            <h3>"The Basics of Web Accessibility: Making Your Website Inclusive"</h3>
+            <p> Learn how to make your website accessible to all users, including those with disabilities. This post covers essential tips and guidelines for creating an inclusive web experience.</p>
+            <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">Read More</a>
+        </div>
+        <div class="post">
+            <img src="1714892538827.jpeg" alt="Post 2 Image">
+            <h3>"CSS Grid vs. Flexbox: Which Layout System Should You Use?"</h3>
+            <p> Dive into the differences between CSS Grid and Flexbox, two powerful layout systems. Understand their strengths and weaknesses to choose the right one for your next project.</p>
+            <a href="https://www.simplilearn.com/tutorials/css-tutorial/css-grid-vs-flexbox#:~:text=CSS%20Grid%20provides%20two%2Ddimensional,axis%2C%20either%20horizontally%20or%20vertically.">Read More</a>
+        </div>
+        <div class="post">
+            <img src="responsive-web-design-1-61f01c4b64c5f-sej.webp" alt="Post 3 Image">
+            <h3>"Understanding Responsive Web Design: Adapting to Any Screen Size"</h3>
+            <p> In today's multi-device world, responsive web design is crucial. This post breaks down the principles of responsive design and offers practical tips for implementation.
+            </p>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design">Read More</a>
+        </div>
+        <div class="post">
+            <img src="4.avif" alt="Post 4 Image">
+            <h3> "Top JavaScript Libraries Every Developer Should Know in 2024"</h3>
+            <p> Stay ahead in the tech game by familiarizing yourself with the most popular JavaScript libraries of 2024. Learn what they offer and how they can enhance your development workflow.</p>
+            <a href="https://www.smashingmagazine.com/search/?q=JavaScript%20Libraries">Read More</a>
+        </div>
+        <div class="post">
+            <img src="What-You-Should-Know-About-Optimizing-Your-Website-for-Performance.jpg" alt="Post 5 Image">
+            <h3>"How to Optimize Your Website's Performance: Speed Matters!"</h3>
+            <p> A slow website can drive visitors away. Discover strategies to optimize your website's performance, from image optimization to reducing server requests.</p>
+            <a href="https://developers.google.com/speed">Read More</a>
+        </div>
+        <div class="post">
+            <img src="seo-idea-lightbulbs-ss-1920.jpg" alt="Post 6 Image">
+            <h3>"The Importance of SEO in Web Development: Boost Your Visibility"</h3>
+            <p> Search engine optimization (SEO) is key to getting your website noticed. This post covers the basics of SEO and how to implement it effectively in your web projects.</p>
+            <a href="https://moz.com/beginners-guide-to-seo">Read More</a>
+        </div>
+    </section>
+    
+    
+
+
+     <!-- FOOTER -->
+     <footer id="footer">
+    <ul class="footer-icons">
+        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+        <li>
+            <a href="https://www.linkedin.com/in/hira-ghulam-nabi-b5151b306" target="_blank" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </li>
+        
+        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+        <li>
+            <a href="https://github.com/Hira6" target="_blank" aria-label="Github Profile">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </li>
+    </ul>
+    
+    <ul class="footer-menu">
+        <li><a href="#"><b>Home</b></a></li>
+        <li><a href="about.html"><b>About</b></a></li>
+        <li><a href="blog.html"><b>Blog</b></a></li>
+        <li><a href="categories.html"><b>Categories</b></a></li>
+        <li><a href="tutorials.html"><b>Tutorials</b></a></li>
+        <li><a href="contact.html"><b>Contact</b></a></li>
+    </ul>
+
+    <div class="footer-copyright">
+        <p>Copyright @ 2024 Coding Tonight. All Rights Reserved</p>
+    </div>
+</footer>
+
+</body>
+</html>
