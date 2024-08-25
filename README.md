@@ -17,6 +17,4 @@ Font Awesome for icons
 **Contributing**
 If you'd like to contribute to this project, feel free to fork the repository and submit a pull request.
 
-**License**
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
+ 
